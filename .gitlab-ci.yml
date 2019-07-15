@@ -1,0 +1,46 @@
+stages:
+  - code-quality
+  - build
+  - deploy
+
+sonar-analysis:
+  stage: code-quality
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: https://tools.sngular.team/sonar
+    SONAR_ANALYSIS_MODE: issues
+  script:
+  - gitlab-sonar-scanner
+
+sonar-report:
+  stage: code-quality
+  image: ciricihq/gitlab-sonar-scanner
+  variables:
+    SONAR_URL: https://tools.sngular.team/sonar
+    SONAR_ANALYSIS_MODE: publish
+  script:
+  - gitlab-sonar-scanner
+
+build_react:
+  image: node:alpine
+  stage: build
+  script:
+    - apk update && apk add zip
+    - echo "====== Installing dependencies ======"
+    - npm i
+    - echo "====== Building react APP ======"
+    - npm run build
+
+  artifacts:
+    name: panel-build
+    paths:
+      - build
+
+deploy_react:
+  image: garland/aws-cli-docker:latest
+  stage: deploy
+
+  script:
+    - aws s3 sync ./build $AWS_S3_BUCKET --delete
+  only:
+    - master

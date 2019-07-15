@@ -1,0 +1,83 @@
+#graph__container {
+    width: 1200px;
+    height: 70vh;
+    margin: 0 auto;
+    outline: 1px solid #cacaca;
+    background: #f3f3f3;
+}
+
+.botones{
+    width: 1200px;
+   margin-bottom: 3em;
+    margin: 0 auto;
+    padding-bottom: 2em;
+    margin-top: 1em;
+
+}
+
+.txt_titulos{
+    margin-top: 1em;
+}
+
+.txt_nombre{
+    margin-right: 1em;
+    font-size: 14px;
+    font-family: arial;
+    font-weight: 600;
+}
+
+input.caja {
+    margin-left: 1em;
+    width: 10%;
+    height: 25px;
+    border-radius: 6px;
+    border: 1px solid #c0c0c0;
+}
+
+.sty_botones_verde{
+    font-size: 13px;
+    font-family: Arial;
+    margin-right: .5em;
+    height: 26px;
+    border-radius: 5px;
+    width: 10%;
+    background: #53d453;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.sty_botones_crear{
+    font-size: 13px;
+    font-family: Arial;
+    margin-right: .5em;
+    height: 26px;
+    border-radius: 5px;
+    width: 6%;
+    background: #53d453;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.sty_botones_rojo{
+    font-size: 13px;
+    font-family: Arial;
+    margin-right: .5em;
+    height: 26px;
+    border-radius: 5px;
+    width: 10%;
+    background: #e80a0a;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.sty_botones_eliminar{
+    font-size: 13px;
+    font-family: Arial;
+    margin-right: .5em;
+    height: 26px;
+    border-radius: 5px;
+    width: 6%;
+    background: #e80a0a;
+    color: #fff;
+    border: 1px solid #fff;
+}
